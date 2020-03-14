@@ -18,7 +18,7 @@ class Test{
         }
     }
 
-    private static  int[] selectionSort(int[] array) {
+    public static  int[] selectionSort(int[] array) {
         for (int i = 0; i <array.length-1 ; i++) {
             int min=Integer.MAX_VALUE;
             int index=-1;
