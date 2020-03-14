@@ -20,7 +20,7 @@ class Test{
         }
     }
 
-    private static  int[] insertionSort(int[] array) {
+    public static  int[] insertionSort(int[] array) {
         int n=array.length;
         for (int i = 1; i <n ; i++) {
             int value=array[i];
