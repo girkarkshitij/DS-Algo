@@ -1,5 +1,5 @@
 /**
- * Prime factors
+ * Prime factors (Duplicates are allowed)
  */
  
 import java.util.ArrayList;
