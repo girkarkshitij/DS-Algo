@@ -6,8 +6,6 @@ import java.io.*;
 import java.util.InputMismatchException;
 
 public class Main {
-    final static int MAX = 500;
-
     public static void main(String[] xps){
         InputStream inputStream = System.in;
         OutputStream outputStream = System.out;
