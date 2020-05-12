@@ -20,13 +20,13 @@ public class Main{
 }
 
 class Stack{
-    static int[] stack;
-    static int top;
-    static int sizeOfStack;
+    int[] stack;
+    int top;
+    int size;
 
     Stack(int size){
-        sizeOfStack = size;
-        stack = new int[sizeOfStack];
+        this.size = size;
+        stack = new int[size];
         top = -1;
     }
 
