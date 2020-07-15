@@ -9,7 +9,7 @@ class Main2{
      *  Worst-case performance      O(log n)
      *  Best-case performance       O(1)
      *  Average performance         O(log n)
-     *  Worst-case space complexity O(1
+     *  Worst-case space complexity O(1)
      */
     public static int binarySearch(int[] a,int key){
         int l = 0;
