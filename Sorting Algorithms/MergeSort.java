@@ -31,7 +31,7 @@ class Merge{
             aux[k]=a[k];
         }
 
-        for (int k = lo; k <=hi ; k++)
+        for (int k = lo; k <=hi ; k++) {
             if (i>mid)
                 a[k]=aux[j++];
             else if (j>hi)
@@ -40,6 +40,7 @@ class Merge{
                 a[k]=aux[j++];
             else
                 a[k]=aux[i++];
+        }
     }
 
 }
