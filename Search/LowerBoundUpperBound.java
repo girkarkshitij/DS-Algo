@@ -20,7 +20,7 @@ class Main2{
     /**
      *
      * @return It returns index of first element which is grater than searched value.
-     *         If searched element is bigger than any array element function returns the last index.
+     *         If searched element is bigger than any array element function returns -1
      */
     public static int upperBound(int[] array,int value) {
         int low = 0;
@@ -31,6 +31,12 @@ class Main2{
                 low = mid + 1;
             else
                 high = mid;
+        }
+        if (low == array.length-1){
+            if (array[low] > value)
+                return low;
+            else
+                return -1;  //Element not found
         }
         return low;
     }
