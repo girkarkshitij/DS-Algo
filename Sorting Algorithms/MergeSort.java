@@ -17,7 +17,7 @@ class Merge{
         if (hi<=lo)
             return;
         int mid=lo+(hi-lo)/2;
-        sort(a,0,mid);
+        sort(a,lo,mid);
         sort(a,mid+1,hi);
         merge(a,lo,mid,hi);
     }
