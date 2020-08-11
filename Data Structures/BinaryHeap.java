@@ -1,7 +1,7 @@
 /**
  * The BinaryHeap is an -generic- implementation of the PriorityQueue interface.
  * This is a binary min-heap implementation of the priority queue ADT.
- *           Average	     Worst case
+ *              Average     Worst case
  * Space		O(n)        O(n)
  * Search		O(n)	    O(n)
  * Insert		O(1)	    O(log n)
