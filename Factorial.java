@@ -16,7 +16,6 @@ public class Main {
         int t = in.Int();
         while (t-->0){
             int n = in.Int();
-
             int q = 2;
             int[] a = new int[100000];
             a[0] = 1;
@@ -27,7 +26,6 @@ public class Main {
             while (q<=n){
                 current = 0;
                 carry = 0;
-
                 while (current < size){
                     a[current] = a[current] * q;
                     a[current] = a[current] + carry;
@@ -35,7 +33,6 @@ public class Main {
                     a[current] = a[current]%10;
                     current++;
                 }
-
                 while (carry!=0){
                     a[size] = carry%10;
                     carry = carry/10;
