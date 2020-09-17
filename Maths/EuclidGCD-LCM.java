@@ -17,4 +17,8 @@ class Main{
 		else
 			return gcd(b, a%b);
 	}
+	
+	public static int lcm(int a,int b){
+		return a / gcd(a,b) * b;       //It avoids integer overflows by first dividing a with the GCD
+	}
 }
