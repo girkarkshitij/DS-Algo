@@ -15,15 +15,15 @@ class Main{
         // gcd(18, 200) = 2
         // -11(18) + 1(200) = 2
     }
-
-    static int[] gcd(int p, int q) {
+    
+    public static long[] gcd(long p, long q) {
         if (q == 0)
-            return new int[] { p, 1, 0 };
+            return new long[] { p, 1, 0 };
 
-        int[] values = gcd(q, p % q);
-        int d = values[0];
-        int a = values[2];
-        int b = values[1] - (p / q) * values[2];
-        return new int[] { d, a, b };
+        long[] values = gcd(q, p % q);
+        long d = values[0];
+        long a = values[2];
+        long b = values[1] - (p / q) * values[2];
+        return new long[] { d, a, b };
     }
 }
