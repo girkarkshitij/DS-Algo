@@ -1,8 +1,9 @@
 //Using Sieve of Eratosthenes,
 //Create an array of all the prime numbers from 1 to n.
+
 import java.util.Arrays;
 
-class Test{
+public lass Main{
     public static void main(String[] args) {
         int[] primeNumbers = generatePrimes(30);
         for(int prime : primeNumbers)
