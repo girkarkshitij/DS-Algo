@@ -1,5 +1,6 @@
 //Using Sieve of Eratosthenes,
 //Create an array of all the prime numbers from 1 to n.
+//Time : O(nloglogn)  Memory : O(n)
 
 import java.util.Arrays;
 
