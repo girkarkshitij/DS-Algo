@@ -8,7 +8,7 @@ class Main{
     public static void main(String[] args) {
         int p = 18;
         int q = 200;
-        int values[] = gcd(18, 200);
+        long values[] = gcd(18, 200);
         System.out.println("gcd(" + p + ", " + q + ") = " + values[0]);
         System.out.println(values[1] + "(" + p + ") + " + values[2] + "(" + q + ") = " + values[0]);
 
