@@ -1,29 +1,50 @@
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println(factMod(7, 3));
-        // 2
+        System.out.println(modFact(25, 29));
+        //5
     }
 
     /**
-     * @return n! mod p without taking all the multiple factors of p into account
+     * Modular exponentiation
+     * @return (x^y)%p
      */
-    public static int factMod(int n, int p) {
-        ArrayList<Integer> f = new ArrayList<>(p);
-        f.add(1);
+    public static long power(long x, long y, long p) {
+        long ans = 1;
+        x = x % p;
 
-        for (int i = 1; i < p; i++) {
-            f.add(f.get(i - 1) * i % p);
-        }
+        while (y > 0) {
+            if ((y & 1) > 0)
+                ans = (ans * x) % p;
 
-        int res = 1;
-        while (n > 1) {
-            if ((n/p) % 2 == 1)
-                res = p - res;
-            res = res * f.get(n%p) % p;
-            n /= p;
+            y = y >> 1;
+            x = (x * x) % p;
         }
-        return res;
+        return ans;
+    }
+
+    /**
+     * Modular Inverse using Fermat's Little Theorem
+     * @param p is a prime number
+     * @return Inverse of a (mod p)
+     */
+    public static long modInverse(long a, long p) {
+        return power(a, p-2, p);
+    }
+
+    /**
+     * @return n! mod p using Wilson's Theorem
+     * Time: O(plogn)
+     */
+
+    public static long modFact(long n, long p) {
+        if (p <= n)
+            return 0;
+
+        long ans = p - 1;
+
+        for (int i = (int) (n + 1); i < p; i++) {
+            ans = (ans * modInverse(i, p)) % p;
+        }
+        return ans;
     }
 }
