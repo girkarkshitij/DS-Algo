@@ -7,15 +7,17 @@ class Test{
     public static void main(String[] args) {
         int a[] = {-1, 2, 4, -3, 5, 2, -5, 2};
         int n = a.length;
-        int best = 0;
+        int max = Integer.MIN_VALUE;
         int sum = 0;
 
         for (int i = 0; i < n; i++) {
-            sum = Math.max(a[i], sum+a[i]);
-            best = Math.max(best, sum);
+            sum += arr[i];
+            if (sum < 0)
+                sum = 0;
+            max = Math.max(max, sum);
         }
 
-        System.out.println("Maximum sum is "+best);
+        System.out.println("Maximum sum is "+max);
         //Maximum sum is 10
     }
 }
