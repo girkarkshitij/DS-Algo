@@ -1,8 +1,4 @@
-/**
- * Array implementation of Queue
- */
- 
-class Main{
+class HelloWorld {
     public static void main(String[] args) {
         Queue queue = new Queue(3);
         queue.enqueue(1);
@@ -16,45 +12,46 @@ class Main{
     }
 }
 
-class Queue{
+class Queue {
     int[] queue;
-    int front;
-    int rear;
-    int capacity;
-
-    Queue(int capacity){
-        this.capacity = capacity;
-        queue = new int[capacity];
+    int front, rear;
+    int size;
+    
+    public Queue(int size){
+        this.size = size;
+        queue = new int[size];
         front = -1;
         rear = -1;
     }
-
-    public void enqueue(int x){
-        if (isFull())
-            System.out.println("Queue is full");
-        else{
-            if (front == -1)
+    
+    public void enqueue(int val){
+        if(!isFull()){
+            if(front == -1)
                 front++;
-            queue[++rear] = x;
-        }
-    }
-
-    public void dequeue(){
-        if (isEmpty())
-            System.out.println("Queue is empty");
-        else if (front == rear){
-            System.out.println(queue[front]);
-            front = -1;
-            rear = -1;
+            queue[++rear] = val;
         }else{
-            System.out.println(queue[front++]);
+            System.out.println("Queue is already full");  
         }
     }
-
-    public boolean isFull(){
-        return rear == capacity-1;
+    
+    public void dequeue(){
+        if(!isEmpty()){
+            if(front == rear){
+                System.out.println(queue[front]);
+                front = -1;
+                rear = -1;
+            }else{
+                System.out.println(queue[front++]);
+            }
+        }else{
+            System.out.println("Queue is empty");
+        }
     }
-
+    
+    public boolean isFull(){
+        return rear == size-1;
+    }
+    
     public boolean isEmpty(){
         return front == -1;
     }
